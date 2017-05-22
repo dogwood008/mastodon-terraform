@@ -108,6 +108,14 @@ variable "mastodon_docker_image_tag_rails_db_migration" {
   default = "dummy"
 }
 
+variable "mastodon_docker_gid" {
+  default = "0"
+}
+
+variable "mastodon_docker_uid" {
+  default = "0"
+}
+
 variable "mastodon_email_domain_blacklist" {
   default = ""
 }

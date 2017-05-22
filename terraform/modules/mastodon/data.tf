@@ -46,6 +46,10 @@ data "template_file" "mastodon_environment_variables_rails" {
       "value": "$${mastodon_email_domain_whitelist}"
     },
     {
+      "name": "GID",
+      "value": "$${mastodon_docker_gid}"
+    },
+    {
       "name": "LOCAL_DOMAIN",
       "value": "$${mastodon_local_domain}"
     },
@@ -152,6 +156,10 @@ data "template_file" "mastodon_environment_variables_rails" {
     {
       "name": "STREAMING_CLUSTER_NUM",
       "value": "$${mastodon_node_streaming_cluster_num}"
+    },
+    {
+      "name": "UID",
+      "value": "$${mastodon_docker_uid}"
     }
   ]
   JSON
@@ -165,6 +173,8 @@ data "template_file" "mastodon_environment_variables_rails" {
     mastodon_db_port                     = "${aws_db_instance.mastodon.port}"
     mastodon_db_user                     = "${aws_db_instance.mastodon.username}"
     mastodon_default_locale              = "${var.mastodon_default_locale}"
+    mastodon_docker_gid                  = "${var.mastodon_docker_gid}"
+    mastodon_docker_uid                  = "${var.mastodon_docker_uid}"
     mastodon_email_domain_blacklist      = "${var.mastodon_email_domain_blacklist}"
     mastodon_email_domain_whitelist      = "${var.mastodon_email_domain_whitelist}"
     mastodon_local_domain                = "${var.mastodon_local_domain}"
