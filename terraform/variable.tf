@@ -6,8 +6,32 @@ variable "aws_acm_certificate_arn_for_alb" {
   default = ""
 }
 
+variable "aws_autoscaling_group_desired_capacity" {
+  default = 1
+}
+
+variable "aws_autoscaling_group_max_size" {
+  default = 1
+}
+
+variable "aws_autoscaling_group_min_size" {
+  default = 1
+}
+
 variable "aws_db_instance_mastodon_instance_class" {
   default = "db.t2.micro"
+}
+
+variable "aws_ecs_service_desired_count_node_streaming" {
+  default = 1
+}
+
+variable "aws_ecs_service_desired_count_rails_puma" {
+  default = 1
+}
+
+variable "aws_ecs_service_desired_count_rails_sidekiq" {
+  default = 1
 }
 
 variable "aws_ecs_task_definition_mastodon_node_streaming_memory" {
@@ -22,6 +46,10 @@ variable "aws_ecs_task_definition_mastodon_rails_db_set_up_memory" {
   default = "300"
 }
 
+variable "aws_ecs_task_definition_mastodon_rails_mastodon_make_admin_memory" {
+  default = "300"
+}
+
 variable "aws_ecs_task_definition_mastodon_rails_puma_memory" {
   default = "300"
 }
@@ -30,8 +58,24 @@ variable "aws_ecs_task_definition_mastodon_rails_sidekiq_memory" {
   default = "300"
 }
 
+variable "aws_elasticache_cluster_node_type" {
+  default = "cache.t2.micro"
+}
+
 variable "aws_launch_configuration_mastodon_instance_type" {
   default = "t2.micro"
+}
+
+variable "aws_resource_base_name" {
+  default = "mastodon"
+}
+
+variable "aws_s3_bucket_name" {
+  default = ""
+}
+
+variable "mastodon_administrator_name" {
+  default = ""
 }
 
 variable "mastodon_aws_access_key_id" {
@@ -88,31 +132,7 @@ variable "mastodon_prepared_statements" {
   default = "true"
 }
 
-variable "mastodon_s3_bucket" {
-  default = ""
-}
-
 variable "mastodon_s3_cloudfront_host" {
-  default = ""
-}
-
-variable "mastodon_s3_enabled" {
-  default = "false"
-}
-
-variable "mastodon_s3_endpoint" {
-  default = ""
-}
-
-variable "mastodon_s3_hostname" {
-  default = ""
-}
-
-variable "mastodon_s3_protocol" {
-  default = ""
-}
-
-variable "mastodon_s3_region" {
   default = ""
 }
 
