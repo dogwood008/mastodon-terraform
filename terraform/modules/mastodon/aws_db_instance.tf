@@ -6,7 +6,7 @@ resource "aws_db_instance" "mastodon" {
   db_subnet_group_name       = "${aws_db_subnet_group.mastodon.name}"
   engine                     = "postgres"
   engine_version             = "9.6.1"
-  identifier                 = "mastodon"
+  identifier                 = "${var.aws_resource_base_name}"
   instance_class             = "${var.aws_db_instance_mastodon_instance_class}"
   multi_az                   = false
   name                       = "mastodon"
